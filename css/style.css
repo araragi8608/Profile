@@ -199,8 +199,6 @@ img {
 }
 
 .works-item {
-  
-  
   margin-bottom: 70px;
 }
 
@@ -213,7 +211,6 @@ img {
 .works-item:nth-of-type(3n) {
   margin-right: 0;
 }
-
 
 .works-name {
   font-size: 15px;
@@ -448,7 +445,7 @@ About
   height: 100%;
   content: "";
   border-radius: 3px;
-  background-color: #333;
+  background-color: #f0f0f0;
 }
 
 .article-body p {
@@ -652,7 +649,7 @@ media Queries 767
   }
 
   .contact-list img {
-    margin-top: 20px;
+    margin-top: -1px;
   }
 
   /* フッター */
@@ -663,6 +660,10 @@ media Queries 767
   /* 下層ページ */
   .article {
     padding: 50px 0;
+  }
+
+  .article-body {
+    padding: 0 25px;
   }
 
   .article-body h3 {
@@ -678,5 +679,13 @@ media Queries 767
     font-size: 14px;
     line-height: 1.7;
     margin-bottom: 20px;
+  }
+
+  .article-body p a {
+    display: block; /* <a>タグをブロック要素にして、親要素の幅いっぱいに広がるようにする */
+    word-break: break-all; /* 単語の途中で強制的に改行を許可 */
+    overflow-wrap: break-word; /* 長い単語（URLなど）がはみ出す場合に強制的に改行 */
+    /* 必要であれば、ここにスマホ表示用の追加スタイルも記述できますが、
+     折り返し自体は上記のプロパティで十分です。 */
   }
 }
