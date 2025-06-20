@@ -51,14 +51,14 @@ img {
     rgb(162, 153, 174) 50%,
     rgb(222, 222, 170) 100%
   );
-  box-shadow: 0 0 15px rgba(35, 72, 72, 0.2),
-    /* 外側へのぼかし */ 0 0 15px rgba(69, 145, 133, 0.2) inset; /* 内側へのぼかし (オプション) */
+  box-shadow: 0 0 5px rgb(255, 255, 255),
+    /* 外側へのぼかし */ 0 0 3px rgb(255, 255, 255) inset; /* 内側へのぼかし (オプション) */
 }
 
 .container {
   max-width: 1340px;
   margin: 0 auto;
-  padding: 0 8x;
+  padding: 0 8px;
   position: relative;
 }
 
@@ -200,6 +200,8 @@ img {
 
 .works-item {
   margin-bottom: 70px;
+  flex-basis: 31%;
+  text-align: center;
 }
 
 .works-item:hover {
@@ -229,7 +231,7 @@ img {
 .spacer-white {
   background-color: #f0f0f0; /* 白い背景色 */
   width: 100%; /* 幅は自動で拡大縮小（親要素の幅いっぱいに広がる） */
-  height: 30px; /* 手動で高さを調整（例: 100px） */
+  height: 0px; /* 手動で高さを調整（例: 100px） */
   /* 必要に応じて、垂直方向のpaddingも追加して内側の余白を作ることもできます */
   /* padding: 50px 0; */
 }
@@ -278,7 +280,7 @@ img {
 }
 
 /*--------------------------------
- Skill
+Skill
 ---------------------------------*/
 .skill-list {
   display: flex;
@@ -291,7 +293,7 @@ img {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  width: 48%;
+  width: 42%;
   margin: 0 20px 80px 0;
 }
 
@@ -431,6 +433,7 @@ About
 .article-body img {
   width: 100%;
   height: auto;
+  margin-bottom: 30px;
 }
 
 .article-body h3:not(:first-child) {
@@ -456,6 +459,26 @@ About
 
 .home-link {
   text-align: center;
+}
+
+/*--------------------------------
+YouTubeレスポンシブ対応
+---------------------------------*/
+.youtube-responsive-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 のアスペクト比 (9 / 16 * 100%) */
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 30px; /* article-body img の margin-bottom と合わせる */
+}
+
+.youtube-responsive-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /*--------------------------------
@@ -501,7 +524,7 @@ media Queries 767
   }
 
   .container {
-    padding: 0 60px;
+    padding: 0 25px;
   }
 
   /* ヘッダー */
@@ -577,6 +600,8 @@ media Queries 767
     flex: 0 0 48%;
     margin-right: 0;
     margin-bottom: 30px;
+    flex-basis: 100%;
+    text-align: center;
   }
 
   /* art */
@@ -687,5 +712,9 @@ media Queries 767
     overflow-wrap: break-word; /* 長い単語（URLなど）がはみ出す場合に強制的に改行 */
     /* 必要であれば、ここにスマホ表示用の追加スタイルも記述できますが、
      折り返し自体は上記のプロパティで十分です。 */
+  }
+
+  .article-body img {
+    margin-bottom: 10px;
   }
 }
